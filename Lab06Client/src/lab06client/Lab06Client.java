@@ -1,7 +1,5 @@
 package lab06client;
-import java.util.Deque;
-import java.util.ArrayDeque;
-import java.util.Iterator;
+import java.util.*;
 
 public class Lab06Client
 {
@@ -45,11 +43,12 @@ public class Lab06Client
     private void useDequeStringElement()
     {
         // declare a variable (called one) of type Deque<String>
-        Deque<String> myDeque = new ArrayDeque<>();
+        Deque<String> myDeque;// = new ArrayDeque<>();
 
         // create an object of class ArrayDeque and assign its reference
         // to the variable one
-        Deque<Classification> myClassification = new ArrayDeque<>();
+       // Deque<Classification> myClassification = new ArrayDeque<Classification>();
+        myDeque = new ArrayDeque<>();
         // add "red", "blue", "white" to the front of the deque in that sequence
         myDeque.add("white");
         myDeque.add("blue");
@@ -109,12 +108,11 @@ public class Lab06Client
     {
         // create a Deque variable that holds a reference to an
         // ArrayDeque of Classification elements
-     //Deque<Classification> arrayDeque = new ArrayDeque<>();
-        Deque<String> arrayDeque = new ArrayDeque<>();
+        Deque<Classification> arrayDeque = new ArrayDeque<Classification>();
         // push a Classification element with genus "Homo" and species "sapien"
-        arrayDeque.push("(Homo, sapien)");
+        arrayDeque.push("Homo", "sapien");
         // push a Classification element with genus "Malus" and species "domestica"
-        arrayDeque.push("(Malus, domestica)");
+        arrayDeque.push("Malus", "domestica");
         // create an iterator variable and iterate over the deque and display
         // on the console each value
         Iterator iter = arrayDeque.iterator();
