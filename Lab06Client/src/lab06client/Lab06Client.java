@@ -19,10 +19,10 @@ public class Lab06Client
     private class Classification
     {
         /** the genus of the organism */
-        private String genus;
+        private final String genus;
 
         /** the species of the organism */
-        private String species;
+        private final String species;
 
         /** the constructor */
         public Classification(String genus, String species)
@@ -31,6 +31,7 @@ public class Lab06Client
             this.species = species;
         }
 
+        @Override
         public String toString()
         {
             return "(" + this.genus + ", " + this.species + ")";
@@ -108,7 +109,7 @@ public class Lab06Client
     {
         // create a Deque variable that holds a reference to an
         // ArrayDeque of Classification elements
-        Deque<Classification> arrayDeque = new ArrayDeque<Classification>();
+        ArrayDeque<Classification> arrayDeque = new ArrayDeque<>();
         // push a Classification element with genus "Homo" and species "sapien"
         arrayDeque.push("Homo", "sapien");
         // push a Classification element with genus "Malus" and species "domestica"
@@ -117,8 +118,12 @@ public class Lab06Client
         // on the console each value
         Iterator iter = arrayDeque.iterator();
         while (iter.hasNext()){
+        System.out.println(Classification.toString());
+        }
+        /*Iterator iter = arrayDeque.iterator();
+        while (iter.hasNext()){
             String str = (String)iter.next();
-            System.out.println(str);
+            System.out.println(str);*/
     }
     }
 
