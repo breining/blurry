@@ -116,6 +116,7 @@ public class ProjectTwo {
         int col = 0;
         File inFile = new File(args[0]);        
         Scanner reader = null;
+        int [][] picture;
         try {
             reader = new Scanner(inFile);
             
@@ -127,7 +128,7 @@ public class ProjectTwo {
             col++;
             inFile.next();
         }
-        int [][] picture = new int [row][col];
+        picture = new int [row][col];
         
         for (int i = 0; i < picture.length; i++){
             for (int j = 0; j < picture[i].length; j++)
