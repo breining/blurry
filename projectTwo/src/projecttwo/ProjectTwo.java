@@ -116,7 +116,7 @@ public class ProjectTwo {
         int col = 0;
         File inFile = new File(args[0]);        
         Scanner reader = null;
-        int [][] picture;
+        int [][] picture = null;
         try {
             reader = new Scanner(inFile);
             
