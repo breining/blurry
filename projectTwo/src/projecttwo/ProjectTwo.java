@@ -112,18 +112,36 @@ public class ProjectTwo {
             System.exit(0);
         }
         
-        File input = new File(args[0]);        
+        int row = 0;
+        int col = 0;
+        File inFile = new File(args[0]);        
         Scanner reader = null;
         try {
-            reader = new Scanner(input);
+            reader = new Scanner(inFile);
+            
+        while(inFile.hasNextLine()){
+            row++;
+            inFile.next();
+        }
+        while(inFile.hasNextInt()){
+            col++;
+            inFile.next();
+        }
+        int [][] picture = new int [row][col];
+        
+        for (int i = 0; i < picture.length; i++){
+            for (int j = 0; j < picture[i].length; j++)
+            picture[i][j] = inFile.nextInt();
+        }
+        
             
         }
         catch(FileNotFoundException e) {
             System.out.println("Input file " + args[0] + " does not exist.");
             System.exit(0);
         }
+        ProjectTwo image = new ProjectTwo(picture);
         
-        ProjectTwo image = new ProjectTwo(reader);
         //End reading in.
         
         //Executing Methods and Copying Results into original
